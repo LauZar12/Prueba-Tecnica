@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Items Disponibles</title>
+  </head>
+  <body>
+    <h1>Items Disponibles</h1>
+    <ul>
+      {% for item in items_disponibles %}
+      <li>{{ item.titulo }} - {{ item.autor }}</li>
+      {% empty %}
+      <li>No hay items disponibles</li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'items_prestados' %}">Ver Items Prestados</a>
+    <a href="{% url 'item_mas_prestado' %}">Ver Item Más Prestado</a>
+  </body>
+</html>

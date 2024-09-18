@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Item Más Prestado</title>
+  </head>
+  <body>
+    <h1>Item Más Prestado</h1>
+    {% if item_mas_prestado %}
+    <p>
+      {{ item_mas_prestado.titulo }} - {{ item_mas_prestado.autor }} ha sido
+      prestado {{ total_prestamos }} veces.
+    </p>
+    {% else %}
+    <p>No se encontraron préstamos.</p>
+    {% endif %}
+    <a href="{% url 'items_disponibles' %}">Ver Items Disponibles</a>
+    <a href="{% url 'items_prestados' %}">Ver Items Prestados</a>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Items Prestados</title>
+  </head>
+  <body>
+    <h1>Items Prestados</h1>
+    <ul>
+      {% for prestamo in prestamos_activos %}
+      <li>
+        {{ prestamo.item.titulo }} - Prestado el {{ prestamo.fecha_prestamo }}
+      </li>
+      {% empty %}
+      <li>No hay items prestados actualmente</li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'items_disponibles' %}">Ver Items Disponibles</a>
+    <a href="{% url 'item_mas_prestado' %}">Ver Item Más Prestado</a>
+  </body>
+</html>
